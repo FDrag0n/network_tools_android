@@ -10,6 +10,7 @@ import androidx.compose.material.icons.outlined.GraphicEq
 import androidx.compose.material.icons.outlined.GridOn
 import androidx.compose.material.icons.outlined.Hub
 import androidx.compose.material.icons.outlined.Http
+import androidx.compose.material.icons.outlined.Language
 import androidx.compose.material.icons.outlined.Radar
 import androidx.compose.material.icons.outlined.Route
 import androidx.compose.material.icons.outlined.Speed
@@ -43,6 +44,7 @@ import com.networktools.opencode.ui.screens.LanScanScreen
 import com.networktools.opencode.ui.screens.MtrScreen
 import com.networktools.opencode.ui.screens.PingScreen
 import com.networktools.opencode.ui.screens.PortScanScreen
+import com.networktools.opencode.ui.screens.PublicIpScreen
 import com.networktools.opencode.ui.screens.TcpPingScreen
 import com.networktools.opencode.ui.screens.TelnetScreen
 import com.networktools.opencode.ui.screens.TracerouteScreen
@@ -73,6 +75,7 @@ enum class ToolScreen(
     HTTP("http", "HTTP 工具", "GET / POST / PUT 等请求", Icons.Outlined.Http, ToolCategory.SERVICE),
     TELNET("telnet", "Telnet", "文本交互式终端连接", Icons.Outlined.Terminal, ToolCategory.SERVICE),
     BANDWIDTH("bandwidth", "带宽测试", "iperf3 协议测速", Icons.Outlined.Speed, ToolCategory.SERVICE),
+    PUBLIC_IP("publicip", "公网 IP", "查看 IPv4 / IPv6 及归属地", Icons.Outlined.Language, ToolCategory.SERVICE),
     IP_CALC("ipcalc", "IP 计算器", "IPv4 / IPv6 子网地址计算", Icons.Outlined.Calculate, ToolCategory.CALC)
 }
 
@@ -132,6 +135,7 @@ fun AppNavHost() {
             composable(ToolScreen.HTTP.route) { HttpScreen() }
             composable(ToolScreen.TELNET.route) { TelnetScreen() }
             composable(ToolScreen.BANDWIDTH.route) { BandwidthScreen() }
+            composable(ToolScreen.PUBLIC_IP.route) { PublicIpScreen() }
             composable(ToolScreen.IP_CALC.route) { IpCalcScreen() }
         }
     }
